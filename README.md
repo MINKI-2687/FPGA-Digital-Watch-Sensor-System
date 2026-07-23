@@ -6,18 +6,18 @@ FPGA(Basys3) 위에서 **디지털 시계/스톱워치**, **UART 통신**, **FIF
 ## 🏗️ 시스템 구조
 ```
                     ┌─────────────────────────────────────┐
-                    │           system_top                 │
+                    │           system_top                │
                     │                                     │
-  Button ──────────>│  ┌──────────┐   ┌───────────────┐  │
-  (Debounced)       │  │ Control  │──>│  Stopwatch /   │  │
-                    │  │  Unit    │   │  Watch FSM     │  │──── FND Display
-                    │  └──────────┘   └───────────────┘  │
+  Button ──────────>│  ┌──────────┐   ┌───────────────┐   │
+  (Debounced)       │  │ Control  │──>│  Stopwatch /  │   │
+                    │  │  Unit    │   │  Watch FSM    │   │──── FND Display
+                    │  └──────────┘   └───────────────┘   │
                     │                                     │
-  HC-SR04 ─────────>│  ┌──────────┐   ┌──────┐          │
-  (Ultrasonic)      │  │ SR04     │──>│ FIFO │──> UART ──│──── PC (Serial)
-                    │  │Controller│   │      │    TX/RX  │
-  DHT11 ───────────>│  │ DHT11   │──>│      │          │
-  (Temp/Humidity)   │  │Controller│   └──────┘          │
+  HC-SR04 ─────────>│  ┌──────────┐   ┌──────┐            │
+  (Ultrasonic)      │  │ SR04     │──>│ FIFO │──> UART ───│──── PC (Serial)
+                    │  │Controller│   │      │    TX/RX   │
+  DHT11 ───────────>│  │ DHT11    │──>│      │            │
+  (Temp/Humidity)   │  │Controller│   └──────┘            │
                     └─────────────────────────────────────┘
 ```
 
